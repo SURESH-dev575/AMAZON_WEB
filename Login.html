@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            font-family: Arial, sans-serif;
+        }
+        .main {
+            color: black;
+            background-color: white;
+            padding: 5%;
+            border-radius: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 320px;
+            text-align: center;
+        }
+        .sub {
+            background-color: deepskyblue;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+        input[type="submit"],
+        input[type="reset"] {
+            width: 45%;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        input[type="submit"] {
+            background-color: lightgreen;
+        }
+        input[type="reset"] {
+            background-color: red;
+        }
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+        .success {
+            color: green;
+            font-size: 14px;
+        }
+    </style>
+    <script>
+        async function submition(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById("user").value;
+            const password = document.getElementById("key").value;
+            let msg = document.getElementById("result");
+
+            let regText = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            msg.textContent = ""
+
+            // Email Validation
+            if (!regText.test(name)) {
+                msg.textContent = "Enter a valid email";
+                msg.style.color = "red";
+                return;
+            }
+
+            // Password Validation
+            if (password.length <= 5) {
+                msg1.textContent = "Password must be at least 6 characters";
+                msg1.style.color = "red";
+                return;
+            }
+
+            try {
+                const response = await fetch("http://127.0.0.1:5000/submit", {
+                    method: "POST",
+                    headers: {"Content-Type": "application/json"},
+                    body: JSON.stringify({ name: name, password: password })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    msg.textContent = data.success || "Account created successfully!";
+                    msg.style.color = "green";
+                } else {
+                    msg.textContent = data.error || "Something went wrong!";
+                    msg.style.color = "red";
+                }
+            } catch (error) {
+                msg.textContent = "Server not connected";
+                msg.style.color = "red";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="main">
+        <h2>Create Account</h2>
+        <form class="sub" onsubmit="submition(event)">
+            <label for="user">EMAIL</label>
+            <br>
+            <input type="text" id="user" placeholder="Enter Email" required>
+            <br>
+            <label for="key">PASSWORD</label>
+            <br>
+            <input type="password" id="key" placeholder="Enter Password" required>
+            <br>
+            <div id="passwordError" class="error"></div>
+            <div id="result" style="padding-bottom: 10px; text-align: center;"></div>
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </form>
+    </div>
+</body>
+</html>
