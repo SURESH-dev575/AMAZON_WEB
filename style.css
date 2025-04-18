@@ -27,149 +27,137 @@
       background-color: lightgreen;
     }
 }  
-.nav-bar
-{
-    height: 45px;
-    width: auto;
-    background-color: #09191F;
+.nav-bar {
+    height: 80px;
+    width: 100%;
+    background-color: black;
     display: flex;
-    gap: 15px;
+    align-items: center;
+    gap: 1.2rem;
     cursor: pointer;
+    font-size: 1.1rem;
+    padding:  2rem;
 }
+
 .main-logo {
-    width: 70px;
-    height: 50px;
+    width: 150px;
+    height: 65px;
     display: flex;
     align-items: center; 
     justify-content: center; 
     background-size: cover;
+    background-color: black;
 }
+
 .main-logo img {
-    width: 70px; /* Decrease this as needed */
+    width: 100%;
     height: auto;
 }
 
-.location
-{
+.location {
     color: white;
-    font-size: x-small;
-    margin: 8px 0px 8px 0px;
-    /* padding: 9px; */
-}
-.location:hover{
-    opacity: 0.8;
-    /* border: 1px solid white; */
+    font-size: 1.4rem;
+    margin: 0 15px;
 }
 .search {
     display: flex;
     align-items: center; 
-    justify-content:center; 
+    justify-content: center; 
+    appearance: none;
 }
 
 .search-selector {
-    padding: 3px;
-    border-radius: 5px 0px 0px 5px;
+    padding: 8px;
+    font-size: 1.4rem;
+    border-radius: 5px 0 0 5px;
+    border: 1px solid #ccc;
     appearance: none;
 }
 
-.search-input{
-    padding: 2.6px;   
+.search-input {
+    padding: 8px;
+    font-size: 1.4rem;
     border: 1px solid #ccc;
-    width: 200px; 
-    appearance: none;
+    width: 390px;
 }
-.lang
-{
-    font-size:xx-small;
-    appearance: none;
-    width: 60px;
-    height: 23px;         
-    font-size: 14px;    
-    padding: 2px;
+
+.search-logo {
+    padding: 8px 12px;
+    font-size: 1.4rem;
+    border-radius: 0 5px 5px 0;
+    background-color: orange;
+    color: white;
+}
+
+.lang {
+    font-size: 1.4rem;
+    width: 80px;
+    height: 40px;
+    padding: 4px;
     border-radius: 5px;
     background-color: white;
     color: black;
+    margin-left: 10px;
+    appearance: none;
 }
-.search-logo {
-    padding: 2px;
-    border-radius: 0px 3px 3px 0px;
-    background-color: white;
-    cursor: pointer; 
-    background-color: orange;
-}
-.cont-sector{
+
+.cont-sector {
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 10px;
 }
-.signin
-{
-    margin: 6px 0px 5px 0px;
+
+.signin {
     display: flex;
+    align-items: center;
+    margin: 0 15px;
 }
-.account
-{
-    font-size: x-small;
+
+.account {
+    font-size: 1.4rem;
     color: white;
     text-align: center;
-    justify-content: center;
-    padding: 7px 0px 0px 0px;
+    padding-top: 5px;
 }
-.account:hover
-{
-    opacity: 0.9;
-}
-a
-{
+a{ 
     text-decoration: none;
     color: white;
 }
-.orders
-{
+
+.orders {
    display: flex;
    align-items: center;
-   text-align: center;
    justify-content: center;
    color: white;
-   margin: 10px 0px 10px 0px;
-   font-size: x-small;
+   margin: 0 15px;
+   font-size: 1.3rem;
 }
-
-.orders:hover
-{
-    opacity: 0.9;
-}
-.cart
-{
+.cart {
     color: white;
     display: flex;
-    text-align: center;
-    justify-content: center;
     align-items: center;
-    margin: 10px 0px 10px 0px;
+    margin: 15px;
+    font-size: 1.9rem;
 }
-.cart2
-{
-    font-size: x-small;
-}
-.cart:hover
-{
-    opacity: 0.9;
-}
+
+
+
+
 .data {
-    height: 25px; 
+    height: 55px; 
     width: auto;    
-    background-color: darkslategray;
+    background-color: darkslategray;    
 }
 .co {
     width: 100%;
-    overflow-x: auto;
+    overflow-x: auto;   
     display: flex;
     color: white;
     align-items: center;
-    font-size: 9px;
-    gap: 3px;
-    padding: 5px;
+    font-size: 19px;
+    gap: 16px;
+    padding: 10px;
     white-space: nowrap;
   
 }
@@ -177,19 +165,10 @@ a
 .co div a {
     color: white;
     text-decoration: none;
-    padding: 3px 5px;
+    padding: 4px 6px;
     border-radius: 4px;
 
 }
-/* @media (max-width: 768px) {
-    .data {
-      overflow-x: auto;
-    }
-  
-    .co {
-      width: max-content;
-    }
-  } */
   
 .co div a:hover {
     background-color: rgba(255, 255, 255, 0.2);
@@ -210,26 +189,31 @@ a
 }
 .arrow
 {
-    color: white;
     border: none;
-    padding: 30px 15px 30px 15px;
+    padding: 70px 25px ;
     cursor: pointer;
     position: absolute;
     top: 50%;
+    font-size: 34px;
 }
 .left-arrow 
 {
     left: 0;
-    background-color: lightgrey;
+    /* background-color: lightgrey; */
 }
 .right-arrow 
 {
     right: 0;
-    background-color: lightgrey;
+    /* background-color: lightgrey; */
 }
 .arrow:hover {
     border: 1px solid wheat;
     background-color: lightslategray;
+}
+.flag
+{
+    margin-top: 3px;
+    margin-right: 3px;
 }
 /* image */
 .suresh
@@ -239,11 +223,11 @@ a
     background: red;
     color: red;
 }
-  /*boxing  */
+  
 .boxing
 {
     width: auto;
-    height: 1000vh;
+    height: 500vh;
     background-color:rgba(0, 0, 0, 0.08);
     box-sizing: border-box;
 }
@@ -251,51 +235,47 @@ a
 {
     display: flex;
     position: relative;
-    gap: 9px;
-    padding: 10px;
+    gap: 18px;
+    padding: 20px;
     border-style: border-box;
 }
 .box1
 {
+    font-size:x-large;
     background-color: white;
-    width: 222px;
-    padding: 12px;
+    width: 446px;
+    padding: 24px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 .box2
 {
+    font-size:larger;
+    width: 100vh;
     background-color: white;
-    width: 222px;
-    padding: 12px;
+    width: 446px;
+    padding: 24px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1 );
     text-align: center;
 }
 .box3 
 {
+    font-size:larger;
+    width: 100vh;
     background-color: white;
-    width: 222px;
-    padding: 12px;
+    width: 444px;
+    padding: 24px;
     box-shadow: 0px 4px 10px  rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 .s1
 {
     display: flex;
-    gap: 5px;
+    gap: 10px;
 }
 .boxing p
 {
-    font-size: small;
-}
-a:hover
-{
-    text-decoration: underline;
-}
-.flag
-{
-    margin-top: 3px;
-    margin-right: 3px;
+    font-size:larger;
 }
 #img1,#img2
 {
@@ -304,15 +284,15 @@ a:hover
     background: none;
     cursor: pointer;
 }
-.boxing img
+a:hover
 {
-    width: 100px;
+    text-decoration: none;
 }
-/* .floating
+.floating
 {
     width: 100%;
     display: flex;
-    margin-left: 10px;
+    margin-left: 17px;
     margin-top: 5px;
     width: 96.6%;
     height: 45vh;
@@ -326,15 +306,14 @@ a:hover
 {
     color: white;
     border: none;
-    padding: 20px;
     cursor: pointer;
     position: absolute; 
 }
 .left_click
 {
-    left: 10px;
+    left: 5px;
 }
 .right_click
 {
-    right: 10px;
-} */
+    right: 0;
+}
