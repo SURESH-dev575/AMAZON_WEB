@@ -3,6 +3,30 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+/* Tablets (portrait and landscape) */
+@media (max-width: 1024px) {
+    body {
+      font-size: 16px;
+      background-color: lightgray;
+    }
+  }
+  
+  /* Small tablets and large phones */
+  @media (max-width: 768px) {
+    body {
+      font-size: 15px;
+      background-color: lightblue;
+    }
+  }
+  
+  /* Phones */
+  @media (max-width: 480px) {
+    body {
+      font-size: 14px;
+      background-color: lightgreen;
+    }
+}  
 .nav-bar
 {
     height: 45px;
