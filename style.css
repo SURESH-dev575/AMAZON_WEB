@@ -162,6 +162,7 @@ a
     background-color: darkslategray;
 }
 .co {
+    width: 100%;
     overflow-x: auto;
     display: flex;
     color: white;
@@ -187,6 +188,7 @@ a
 .image-slider
 {
     margin: none;
+    width: 100%;
 }
 .image-container img {
     display: block;  
@@ -297,6 +299,7 @@ a:hover
 }
 .floating
 {
+    width: 100%;
     display: flex;
     margin-left: 10px;
     margin-top: 5px;
