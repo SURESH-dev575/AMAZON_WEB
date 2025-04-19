@@ -32,3 +32,13 @@ function nextImage()
   });
   
 });
+
+function lfloating_click()
+{
+
+};
+
+function rfloating_click()
+{
+
+};
