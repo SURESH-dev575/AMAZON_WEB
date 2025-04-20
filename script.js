@@ -17,28 +17,76 @@ function nextImage()
   const image2=document.getElementById("slider-image");
   image2.src=images[curIndex]
 }
-  setInterval(nextImage, 2000);
-  document.addEventListener("DOMContentLoaded", () => {
-  let img11 = document.querySelector("#img1");
-  
-  img11.addEventListener("click", () => 
-  {
-          window.open("https://www.amazon.in/s?bbn=1388921031&rh=n%3A1388921031%2Cp_89%3AboAt&_encoding=UTF8&content-id=amzn1.sym.82b20790-8877-4d70-8f73-9d8246e460aa&pd_rd_r=7382110d-b385-4553-a5dd-b3aa630c89f0&pd_rd_w=6Pk87&pd_rd_wg=xKHdb&pf_rd_p=82b20790-8877-4d70-8f73-9d8246e460aa&pf_rd_r=KN6W5NF1G74NX2EPE68C&ref=pd_hp_d_atf_unk", "_self"); // Redirect
-  });
-  let image2 = document.querySelector("#img2");
-  image2.addEventListener("click",()=>
-  {
-         window.open("https://www.amazon.in/b/?_encoding=UTF8&node=1380442031&pd_rd_w=snR6N&content-id=amzn1.sym.f8e82c51-0408-4554-a158-9be4d776850d&pf_rd_p=f8e82c51-0408-4554-a158-9be4d776850d&pf_rd_r=FQ4HXJV6KYQ1GD6XWFZ4&pd_rd_wg=ydyFU&pd_rd_r=ee7ba847-4871-42e1-9d23-be02b6cdfe18&ref_=pd_hp_d_atf_unk")
-  });
-  
-});
-
-// function lfloating_click()
+setInterval(nextImage, 2000);
+// document.addEventListener("DOMContentLoaded", () => 
 // {
+//   let img11 = document.querySelector("#img1");
+  
+//   img11.addEventListener("click", () => 
+//   {
+//           window.open("https://www.amazon.in/s?bbn=1388921031&rh=n%3A1388921031%2Cp_89%3AboAt&_encoding=UTF8&content-id=amzn1.sym.82b20790-8877-4d70-8f73-9d8246e460aa&pd_rd_r=7382110d-b385-4553-a5dd-b3aa630c89f0&pd_rd_w=6Pk87&pd_rd_wg=xKHdb&pf_rd_p=82b20790-8877-4d70-8f73-9d8246e460aa&pf_rd_r=KN6W5NF1G74NX2EPE68C&ref=pd_hp_d_atf_unk", "_self"); // Redirect
+//   });
+//   let image2 = document.querySelector("#img2");
+//   image2.addEventListener("click",()=>
+//   {
+//          window.open("https://www.amazon.in/b/?_encoding=UTF8&node=1380442031&pd_rd_w=snR6N&content-id=amzn1.sym.f8e82c51-0408-4554-a158-9be4d776850d&pf_rd_p=f8e82c51-0408-4554-a158-9be4d776850d&pf_rd_r=FQ4HXJV6KYQ1GD6XWFZ4&pd_rd_wg=ydyFU&pd_rd_r=ee7ba847-4871-42e1-9d23-be02b6cdfe18&ref_=pd_hp_d_atf_unk")
+//   });
+  
+// });
 
-// };
+let data = [
+  [
+      "https://m.media-amazon.com/images/I/81f6VbQS+GL._AC_SY400_.jpg",
+      "https://m.media-amazon.com/images/I/71hbadRlx-L._AC_SY400_.jpg",
+      "https://m.media-amazon.com/images/I/712UAXEcy8L._AC_SY400_.jpg",
+      "https://m.media-amazon.com/images/I/6125dmLe5lL._AC_SY400_.jpg"
+  ],
+  [
+      "https://m.media-amazon.com/images/I/71Wnw7s8XHL._AC_SY400_.jpg",
+      "https://m.media-amazon.com/images/I/716pIiauYfL._AC_SY400_.jpg",
+      "https://m.media-amazon.com/images/I/61fVpsa8rtL._AC_SY400_.jpg",
+      "https://m.media-amazon.com/images/I/71nTtUe5XTL._AC_SY400_.jpg"
+  ],
+  [
+      "https://m.media-amazon.com/images/I/71JVMUr1k5L._AC_SY400_.jpg",
+      "https://m.media-amazon.com/images/I/71bR33kHbmL._AC_SY400_.jpg",
+      "https://m.media-amazon.com/images/I/71bR33kHbmL._AC_SY400_.jpg",
+      "https://m.media-amazon.com/images/I/61bT2guXfyL._AC_SY400_.jpg"
+  ]
+];
 
-// function rfloating_click()
-// {
+let index = 0;
 
-// };
+window.onload = function () {
+  const image_file = document.querySelector(".image_floating");
+  console.log("Image file element: ", image_file);
+
+  
+  function process(count) {
+    image_file.innerHTML = ''; // ✅ Safe to use now
+    data[count].forEach(src_data => {
+      const image_data = document.createElement('img');
+      image_data.src = src_data;
+      image_data.style.margin = "10px";
+      image_data.style.height = "200px";
+      image_data.style.width = "auto";
+      image_file.appendChild(image_data);
+    });
+  }
+
+  function lfloating_click() {
+    index = (index - 1 + data.length) % data.length;
+    process(index);
+  }
+
+  function rfloating_click() {
+    index = (index + 1) % data.length;
+    process(index);
+  }
+
+  // Expose these functions to the global scope for button onclick to work
+  window.lfloating_click = lfloating_click;
+  window.rfloating_click = rfloating_click;
+
+  process(index);
+};
