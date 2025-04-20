@@ -1,32 +1,32 @@
-*
-{
+/* Global Reset */
+* {
     margin: 0;
     box-sizing: border-box;
 }
 
-/* Tablets (portrait and landscape) */
+/* Responsive Typography and Background */
 @media (max-width: 1024px) {
     body {
-      font-size: 16px;
-      background-color: lightgray;
+        font-size: 16px;
+        background-color: lightgray;
     }
-  }
-  
-  /* Small tablets and large phones */
-  @media (max-width: 768px) {
+}
+
+@media (max-width: 768px) {
     body {
-      font-size: 15px;
-      background-color: lightblue;
+        font-size: 15px;
+        background-color: lightblue;
     }
-  }
-  
-  /* Phones */
-  @media (max-width: 480px) {
+}
+
+@media (max-width: 480px) {
     body {
-      font-size: 14px;
-      background-color: lightgreen;
+        font-size: 14px;
+        background-color: lightgreen;
     }
-}  
+}
+
+/* Navigation Bar */
 .nav-bar {
     height: 80px;
     width: 100%;
@@ -36,16 +36,15 @@
     gap: 1.2rem;
     cursor: pointer;
     font-size: 1.1rem;
-    padding:  2rem;
+    padding: 2rem;
 }
 
 .main-logo {
     width: 150px;
     height: 65px;
     display: flex;
-    align-items: center; 
-    justify-content: center; 
-    background-size: cover;
+    align-items: center;
+    justify-content: center;
     background-color: black;
 }
 
@@ -54,39 +53,56 @@
     height: auto;
 }
 
-.location {
+.location, .account, .orders, .cart {
     color: white;
-    font-size: 1.4rem;
-    margin: 0 15px;
 }
+
+.location, .account {
+    font-size: 1.4rem;
+}
+
+.orders {
+    font-size: 1.3rem;
+    margin: 0 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart {
+    margin: 15px;
+    font-size: 1.9rem;
+    display: flex;
+    align-items: center;
+}
+
 .search {
     display: flex;
-    align-items: center; 
-    justify-content: center; 
-    appearance: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-selector, .search-input, .search-logo {
+    font-size: 1.4rem;
+    padding: 8px;
+    border: 1px solid #ccc;
 }
 
 .search-selector {
-    padding: 8px;
-    font-size: 1.4rem;
     border-radius: 5px 0 0 5px;
-    border: 1px solid #ccc;
-    appearance: none;
 }
 
 .search-input {
-    padding: 8px;
-    font-size: 1.4rem;
-    border: 1px solid #ccc;
     width: 390px;
+    border-left: none;
+    border-right: none;
 }
 
 .search-logo {
-    padding: 8px 12px;
-    font-size: 1.4rem;
     border-radius: 0 5px 5px 0;
     background-color: orange;
     color: white;
+    padding: 8px 12px;
 }
 
 .lang {
@@ -98,56 +114,34 @@
     background-color: white;
     color: black;
     margin-left: 10px;
-    appearance: none;
 }
 
-.cont-sector {
+.cont-sector, .signin {
     display: flex;
     align-items: center;
-    justify-content: center;
     gap: 10px;
-}
-
-.signin {
-    display: flex;
-    align-items: center;
     margin: 0 15px;
 }
 
-.account {
-    font-size: 1.4rem;
-    color: white;
-    text-align: center;
-    padding-top: 5px;
-}
-a{ 
+a {
     text-decoration: none;
     color: white;
 }
 
-.orders {
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   color: white;
-   margin: 0 15px;
-   font-size: 1.3rem;
+a:hover, .a_sample:hover {
+    text-decoration: underline;
+    cursor: pointer;
 }
-.cart {
-    color: white;
-    display: flex;
-    align-items: center;
-    margin: 15px;
-    font-size: 1.9rem;
-}
+
+/* Category Section */
 .data {
-    height: 55px; 
-    width: auto;    
-    background-color: darkslategray;    
+    height: 55px;
+    background-color: darkslategray;
 }
+
 .co {
     width: 100%;
-    overflow-x: auto;   
+    overflow-x: auto;
     display: flex;
     color: white;
     align-items: center;
@@ -155,205 +149,166 @@ a{
     gap: 16px;
     padding: 10px;
     white-space: nowrap;
-  
 }
 
 .co div a {
-    color: white;
-    text-decoration: none;
     padding: 4px 6px;
     border-radius: 4px;
-
 }
-  
+
 .co div a:hover {
     background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* /image data */
-.image-slider
-{
-    margin: none;
+/* Image Slider */
+.image-slider {
     width: 100%;
 }
+
 .image-container img {
-    display: block;  
+    display: block;
     max-width: 100%;
-    height: 20%;
+    height: auto;
     object-fit: cover;
     margin-top: 5px;
 }
-.arrow
-{
+
+.arrow {
     border: none;
-    padding: 70px 25px ;
+    padding: 70px 25px;
     cursor: pointer;
     position: absolute;
     top: 50%;
     font-size: 34px;
+    transform: translateY(-50%);
 }
-.left-arrow 
-{
+
+.left-arrow {
     left: 0;
 }
-.right-arrow 
-{
-    right: 0;
 
+.right-arrow {
+    right: 0;
 }
+
 .arrow:hover {
     border: 1px solid wheat;
     background-color: lightslategray;
 }
-.flag
-{
-    margin-top: 3px;
-    margin-right: 3px;
-}
-/* image */
-.suresh
-{
-    width: 10%;
-    height: 45pxz;
-    background: red;
-    color: red;
-}
-  
-.boxing
-{
-    width: auto;
-    height: 500vh;
-    background-color:rgba(0, 0, 0, 0.08);
-    box-sizing: border-box;
-}
-.inbox
-{
-    display: flex;
-    position: relative;
-    gap: 18px;
-    padding: 20px;
-    border-style: border-box;
-}
-.box1
-{
-    font-size:x-large;
-    background-color: white;
-    width: 446px;
-    padding: 24px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-.box2
-{
-    font-size:larger;
-    width: 100vh;
-    background-color: white;
-    width: 446px;
-    padding: 24px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1 );
-    text-align: center;
-}
-.box3 
-{
-    font-size:larger;
-    width: 100vh;
-    background-color: white;
-    width: 444px;
-    padding: 24px;
-    box-shadow: 0px 4px 10px  rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-.s1
-{
-    display: flex;
-    gap: 10px;
-}
-.boxing p
-{
-    font-size:larger;
-}
-#img1,#img2
-{
-    padding: 0;
-    border: none;
-    background: none;
-    cursor: pointer;
-}
-a:hover
-{
-    text-decoration: none;
-}
-.floating
-{
-    margin: 5px 0px 0px 23px;
+
+/* Floating Section */
+.floating {
+    margin: 5px 0 0 23px;
     width: 96.6%;
     height: 48vh;
     background-color: white;
-    box-shadow: 0px 4px 10px  rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
 }
-.clicking1
-{
-    left: 0;
-    padding: 20px 10px 20px 10px;
+
+.clicking1, .clicking2 {
+    padding: 20px 10px;
     position: absolute;
+    top: 344vh;
+    border: none;
+    font-size: xx-large;
+    background-color: #ccc;
+    cursor: pointer;
+}
+
+.clicking1 {
     left: 50px;
-    top: 344vh;
-    border: none;
-    font-size: xx-large;
-    background-color: #ccc;
 }
-.clicking2
-{
-    right: 0;
-    padding: 20px 10px 20px 10px;
-    position: absolute;
+
+.clicking2 {
     right: 53px;
-    top: 344vh;
-    border: none;
-    font-size: xx-large;
-    background-color: #ccc;
 }
-.image_floating
-{
-    width: 96%;
-    height: 270px;
-    background-color: white;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    margin-top: 30px;
-    margin-left: 28px;
-}
-.float_data
-{
-    margin: 0px 0px 0px 30px;
-    color: black;
-    font-size: xx-large;
-    padding-top: 12px;  
-}
-.a_sample:hover
-{
-    text-decoration: underline;
-    cursor: pointer;
-}
-.clicking1:hover,.clicking2:hover
-{
-    cursor: pointer;
+
+.clicking1:hover, .clicking2:hover {
     background-color: azure;
     opacity: 0.6;
     border: 1px solid black;
 }
 
 .image_floating {
+    width: 96%;
+    height: 270px;
+    background-color: white;
     display: flex;
+    align-items: center;
     justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
-    margin: 20px;
+    margin: 30px 0 20px 28px;
+    text-align: center;
 }
+
+.float_data {
+    margin-left: 30px;
+    color: black;
+    font-size: xx-large;
+    padding-top: 12px;
+}
+
+/* Content Boxes */
+.boxing {
+    width: auto;
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.08);
+    box-sizing: border-box;
+}
+
+.inbox {
+    display: flex;
+    gap: 18px;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.box1, .box2, .box3 {
+    background-color: white;
+    width: 446px;
+    padding: 24px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-size: larger;
+}
+
+.box1 {
+    font-size: x-large;
+}
+
+.s1 {
+    display: flex;
+    gap: 10px;
+}
+
+.boxing p {
+    font-size: larger;
+}
+
+#img1, #img2 {
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+/* Utility */
 button {
     padding: 10px 20px;
     font-size: 16px;
     margin: 10px;
     cursor: pointer;
+}
+
+.flag {
+    margin-top: 3px;
+    margin-right: 3px;
+}
+
+.suresh {
+    width: 10%;
+    height: 45px;
+    background: red;
+    color: red;
 }
