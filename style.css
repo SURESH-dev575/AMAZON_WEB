@@ -140,10 +140,6 @@ a{
     margin: 15px;
     font-size: 1.9rem;
 }
-
-
-
-
 .data {
     height: 55px; 
     width: auto;    
@@ -199,12 +195,10 @@ a{
 .left-arrow 
 {
     left: 0;
-    /* background-color: lightgrey; */
 }
 .right-arrow 
 {
     right: 0;
-    /* background-color: lightgrey; */
 }
 .arrow:hover {
     border: 1px solid wheat;
