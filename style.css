@@ -1,32 +1,35 @@
-*
-{
+* {
     margin: 0;
     box-sizing: border-box;
 }
 
-/* Tablets (portrait and landscape) */
+body {
+    font-size: 17px;
+}
+
+/* Responsive Breakpoints */
 @media (max-width: 1024px) {
     body {
-      font-size: 16px;
-      background-color: lightgray;
+        font-size: 16px;
+        background-color: lightgray;
     }
-  }
-  
-  /* Small tablets and large phones */
-  @media (max-width: 768px) {
+}
+
+@media (max-width: 768px) {
     body {
-      font-size: 15px;
-      background-color: lightblue;
+        font-size: 15px;
+        background-color: lightblue;
     }
-  }
-  
-  /* Phones */
-  @media (max-width: 480px) {
+}
+
+@media (max-width: 480px) {
     body {
-      font-size: 14px;
-      background-color: lightgreen;
+        font-size: 14px;
+        background-color: lightgreen;
     }
-}  
+}
+
+/* Navigation Bar */
 .nav-bar {
     height: 80px;
     width: 100%;
@@ -34,19 +37,19 @@
     display: flex;
     align-items: center;
     gap: 1.2rem;
+    padding: 2rem;
     cursor: pointer;
     font-size: 1.1rem;
-    padding:  2rem;
 }
 
 .main-logo {
     width: 150px;
     height: 65px;
     display: flex;
-    align-items: center; 
-    justify-content: center; 
-    background-size: cover;
+    align-items: center;
+    justify-content: center;
     background-color: black;
+    background-size: cover;
 }
 
 .main-logo img {
@@ -59,11 +62,11 @@
     font-size: 1.4rem;
     margin: 0 15px;
 }
+
 .search {
     display: flex;
-    align-items: center; 
-    justify-content: center; 
-    appearance: none;
+    align-items: center;
+    justify-content: center;
 }
 
 .search-selector {
@@ -71,7 +74,6 @@
     font-size: 1.4rem;
     border-radius: 5px 0 0 5px;
     border: 1px solid #ccc;
-    appearance: none;
 }
 
 .search-input {
@@ -98,7 +100,6 @@
     background-color: white;
     color: black;
     margin-left: 10px;
-    appearance: none;
 }
 
 .cont-sector {
@@ -120,19 +121,21 @@
     text-align: center;
     padding-top: 5px;
 }
-a{ 
+
+a {
     text-decoration: none;
     color: white;
 }
 
 .orders {
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   color: white;
-   margin: 0 15px;
-   font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin: 0 15px;
+    font-size: 1.3rem;
 }
+
 .cart {
     color: white;
     display: flex;
@@ -140,208 +143,141 @@ a{
     margin: 15px;
     font-size: 1.9rem;
 }
+
+/* Horizontal Scroll Menu */
 .data {
-    height: 55px; 
-    width: auto;    
-    background-color: darkslategray;    
+    height: 55px;
+    background-color: darkslategray;
 }
+
 .co {
-    width: 100%;
-    overflow-x: auto;   
     display: flex;
-    color: white;
     align-items: center;
-    font-size: 19px;
     gap: 16px;
+    color: white;
+    font-size: 19px;
     padding: 10px;
     white-space: nowrap;
-  
+    overflow-x: auto;
 }
 
 .co div a {
+    padding: 4px 6px;
     color: white;
     text-decoration: none;
-    padding: 4px 6px;
     border-radius: 4px;
-
 }
-  
+
 .co div a:hover {
     background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* /image data */
-.image-slider
-{
-    margin: none;
+/* Image Slider */
+.image-slider {
     width: 100%;
 }
+
 .image-container img {
-    display: block;  
+    display: block;
     max-width: 100%;
     height: 20%;
     object-fit: cover;
     margin-top: 5px;
 }
-.arrow
-{
-    border: none;
-    padding: 70px 25px ;
-    cursor: pointer;
+
+.arrow {
     position: absolute;
     top: 50%;
+    padding: 70px 25px;
+    border: none;
     font-size: 34px;
+    cursor: pointer;
+    background: transparent;
 }
-.left-arrow 
-{
+
+.left-arrow {
     left: 0;
 }
-.right-arrow 
-{
+
+.right-arrow {
     right: 0;
 }
+
 .arrow:hover {
     border: 1px solid wheat;
     background-color: lightslategray;
 }
-.flag
-{
+
+/* Flags */
+.flag {
     margin-top: 3px;
     margin-right: 3px;
 }
-/* image */
-.suresh
-{
+
+/* Placeholder Box */
+.suresh {
     width: 10%;
-    height: 45pxz;
+    height: 45px;
     background: red;
     color: red;
 }
-  
-.boxing
-{
+
+/* Box Section */
+.boxing {
     padding-left: 20px;
-    width: auto;
-    height: 500vh;
-    background-color:rgba(0, 0, 0, 0.08);
-    box-sizing: border-box;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.08);
 }
-.inbox
-{
+
+.inbox {
     display: flex;
-    position: relative;
     gap: 35px;
     padding: 20px;
-    border-style: border-box;
 }
-.box1
-{
-    font-size:x-large;
-    background-color: white;
+
+.box1, .box2, .box3 {
     width: 475px;
     padding: 24px;
+    background-color: white;
+    text-align: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
 }
-.box2
-{
-    font-size:larger;
-    width: 100vh;
-    background-color: white;
-    width: 475px;
-    padding: 24px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1 );
-    text-align: center;
+
+.box1 {
+    font-size: x-large;
 }
-.box3 
-{
-    font-size:larger;
-    width: 100vh;
-    background-color: white;
-    width: 475px;
-    padding: 24px;
-    box-shadow: 0px 4px 10px  rgba(0, 0, 0, 0.1);
-    text-align: center;
+
+.box2, .box3 {
+    font-size: larger;
 }
-.s1
-{
+
+.s1 {
     display: flex;
     gap: 10px;
 }
-.boxing p
-{
-    font-size:larger;
+
+.boxing p {
+    font-size: larger;
 }
-#img1,#img2
-{
+
+#img1, #img2 {
     padding: 0;
     border: none;
     background: none;
     cursor: pointer;
 }
-a:hover
-{
+
+a:hover {
     text-decoration: none;
 }
-.floating
-{
-    margin: 5px 0px 0px 23px;
+
+/* Floating Section */
+.floating {
+    margin: 5px 0 0 23px;
     width: 96.6%;
     height: 48vh;
     background-color: white;
-    box-shadow: 0px 4px 10px  rgba(0, 0, 0, 0.5);
-}
-.clicking1
-{
-    left: 0;
-    padding: 20px 10px 20px 10px;
-    position: absolute;
-    left: 50px;
-    top: 344vh;
-    border: none;
-    font-size: xx-large;
-    background-color: #ccc;
-}
-.clicking2
-{
-    right: 0;
-    padding: 20px 10px 20px 10px;
-    position: absolute;
-    right: 53px;
-    top: 344vh;
-    border: none;
-    font-size: xx-large;
-    background-color: #ccc;
-}
-.image_floating
-{
-    width: 96%;
-    height: 270px;
-    background-color: white;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    margin-top: 30px;
-    margin-left: 28px;
-}
-.float_data
-{
-    margin: 0px 0px 0px 30px;
-    color: black;
-    font-size: xx-large;
-    padding-top: 12px;  
-}
-.a_sample:hover
-{
-    text-decoration: underline;
-    cursor: pointer;
-}
-.clicking1:hover,.clicking2:hover
-{
-    cursor: pointer;
-    background-color: azure;
-    opacity: 0.6;
-    border: 1px solid black;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 .image_floating {
@@ -349,8 +285,52 @@ a:hover
     justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
-    margin: 20px;
+    margin: 20px 28px 0 28px;
+    height: 270px;
+    background-color: white;
+    text-align: center;
+    align-items: center;
 }
+
+.float_data {
+    margin-left: 30px;
+    color: black;
+    font-size: xx-large;
+    padding-top: 12px;
+}
+
+.a_sample:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.clicking1,
+.clicking2 {
+    position: absolute;
+    padding: 20px 10px;
+    font-size: xx-large;
+    background-color: #ccc;
+    border: none;
+}
+
+.clicking1 {
+    left: 50px;
+    top: 344vh;
+}
+
+.clicking2 {
+    right: 53px;
+    top: 344vh;
+}
+
+.clicking1:hover,
+.clicking2:hover {
+    background-color: azure;
+    opacity: 0.6;
+    border: 1px solid black;
+}
+
+/* General Buttons */
 button {
     padding: 10px 20px;
     font-size: 16px;
